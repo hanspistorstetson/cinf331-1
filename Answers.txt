@@ -1,0 +1,15 @@
+Solution1: chown changes the owner of files and folders to the specified user and group. tshark -n disables all name resolution. Name resolution is resolving ip addresses to human readable formats.
+
+Solution2: I ran sudo dpkg-reconfigure wireshark-common to allow nonsuperusers to sniff packets. Then I added myself to the wireshark group because only members of the wireshark group can sniff packets.
+
+Solution3: In order to get rid of the lua complaint, I went into the init.lua file and set disable_lua = false.
+
+Solution4: The client port duirng a DNS query is an arbitrary unprivileged port. This means any port over 1024 because those first 1024 ports are special ports that normal users are not allowed to host on.
+
+Solution5: Diffie-Hellman group exchang 
+
+Solution6: sudo tcpdump -i eht0 port 22
+
+Solution7: command used: sudo tcpdump -i eth0 'tcp[13] == 2 || tcp[13] == 18'. This worked because the flag for SYN packets is 2 in decimal and the flag for SYN-ACK packets is 18 in decimal. The logical expression check that binary value of octet 13 is either one of those numbers and if it is, it writes it to file syn.pcap
+
+
